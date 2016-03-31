@@ -32,7 +32,7 @@ def getLocalIP():
         ip = out[0].strip().split("\n")  # 所有的列表
         if len(ip) == 1 and ip[0] == "" or len(ip) == 0:
             return False
-        ip = "完".join(ip)
+        ip = "finish".join(ip)
     return ip
 
 
@@ -53,10 +53,10 @@ def play(voice):
 def speak(ip):
     for i in ip:
         if i == ".":
-            play("点")
+            play("dot")
         else:
             play(i)
-    play("完")
+    play("finish")
 
 if __name__ == '__main__':
     count = 0
@@ -64,7 +64,7 @@ if __name__ == '__main__':
         ip = getLocalIP()
         print ip
         if ip == False:
-            play("正在获取网络地址")
+            play("getting network ip address")
         else:
             count += 1
             speak(ip)
