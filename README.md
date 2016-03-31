@@ -29,3 +29,7 @@ raspberry pi projects for testing!
 ```bash
 curl "https://raw.githubusercontent.com/xgqfrms/raspberrypi/master/setup.sh" | bash
 ```
+
+```bash
+curl "https://raw.github.com/xgqfrms/raspberrypi/master/setup.sh" | bash
+```
