@@ -16,7 +16,7 @@
 
 设置树莓派为静态ip的方法和debian linux修改是一样的
 
-只需要修改文件sudo vi /etc/network/interfaces文件即可
+只需要修改文件`sudo vim /etc/network/interfaces`文件即可
 
 我的pi操作系统是2013-02-09-wheezy-raspbian.img
 
@@ -81,9 +81,12 @@ wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 
 然后重启服务或系统
 
+```sh
 sudo reboot
 
 root@raspberrypi:~# sudo service networking restart
+
+```
 
 树莓派为静态ip而且可以连接外网
 
@@ -91,15 +94,20 @@ root@raspberrypi:~# sudo service networking restart
 
 
 测试是否能联网：
+```sh
 pi@raspberrypi ~ $ sudo apt-get update
 命中 http://archive.raspberrypi.org wheezy InRelease
 获取：1 http://mirrordirector.raspbian.org wheezy InRelease [12.5 kB]
 命中 http://archive.raspberrypi.org wheezy/main armhf Packages
 忽略 http://archive.raspberrypi.org wheezy/main Translation-zh_CN
+```
 
 如果你想修改DNS那么你需要修改此文件
 
+```sh
 root@raspberrypi:~# sudo cat /etc/resolv.conf
+```
+
 改成类似的即可
 
 nameserver 8.8.8.8
@@ -108,5 +116,9 @@ nameserver 208.67.220.220
 nameserver 208.67.222.222
 nameserver 10.10.10.10
 
+```sh
+
 root@raspberrypi:~# sudo service networking restart
+
+```
 
