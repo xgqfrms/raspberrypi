@@ -7,7 +7,10 @@ sudo apt-get install -y mpg123
 sudo rm -rf /var/raspberrypi/
 #移动 mv 
 sudo mv raspberrypi /var/
-#管道 ？
+# | 管道
+# $ man tee
+# The tee utility copies standard input to standard output, making a copy in zero or more files.  The output is unbuffered.
+#  -a      Append the output to the files rather than overwriting them.
 echo "/usr/bin/python /var/raspberrypi/speak_ip.py &" | sudo tee -a /etc/rc.local
 
 echo "install finished!"
